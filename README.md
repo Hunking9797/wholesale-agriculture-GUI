@@ -4,7 +4,7 @@ Developed using Tkinter and SQL
 # INSTRUCTIONS
 <ul>
   <li> Create new schema and import wholesale.sql </li>
-  <li> Configure username and password in <strong>main.py</strong> </li>
+  <li> Configure username and password in <b>main.py</b> </li>
 </ul>
 
 ## Home Interface
