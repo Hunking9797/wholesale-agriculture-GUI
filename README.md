@@ -5,4 +5,9 @@ Developed using Tkinter and SQL
 ![Home Interface](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/1.png?raw=true)
 
 ## Crop Table
-![Crop Details(CRUD)](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/2.png?)
+![Crop Details(CRUD)](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/2.png?raw=true)
+![Crop Details Demonstration](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/3.png?raw=true)
+
+## Supplier Table
+![Supplier Details(CRUD)](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/5.png?raw=true)
+
