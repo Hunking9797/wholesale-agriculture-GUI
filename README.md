@@ -7,6 +7,8 @@ Developed using Tkinter and SQL
   <li> Configure username and password in <mark> main.py </mark> </li>
 </ul>
 
+<mark> main.py </mark>
+
 ## Home Interface
 ![Home Interface](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/1.png?raw=true)
 
