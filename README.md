@@ -4,16 +4,17 @@ Developed using Tkinter and SQL
 # INSTRUCTIONS
 <ul>
   <li> Create new schema and import wholesale.sql </li>
-  <li> Configure username and password in <b>main.py</b> </li>
+  <li> Configure username and password in <b>main.py</b> (use replaceAll in your IDE for editing all occurence of username and password with your credentials on SQL)</li>
+  <li> That's it you ready to go. </li>
 </ul>
 
 ## Home Interface
 <img src="https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/1.png" width=300 height=350 />
 
 ## Crop Table
-![Crop Details(CRUD)](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/2.png?raw=true)
-![Crop Details Demonstration](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/3.png?raw=true)
+<img src="https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/2.png" width=300 height=350 />
+<img src="https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/3.png" width=300 height=350 />
 
 ## Supplier Table
-![Supplier Details(CRUD)](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/5.png?raw=true)
+<img src="https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/5.png" width=300 height=350 />
 
