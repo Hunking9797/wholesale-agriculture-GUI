@@ -4,10 +4,8 @@ Developed using Tkinter and SQL
 # INSTRUCTIONS
 <ul>
   <li> Create new schema and import wholesale.sql </li>
-  <li> Configure username and password in <mark> main.py </mark> </li>
+  <li> Configure username and password in **main.py** </li>
 </ul>
-
-<mark> main.py </mark>
 
 ## Home Interface
 ![Home Interface](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/1.png?raw=true)
