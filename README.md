@@ -8,7 +8,7 @@ Developed using Tkinter and SQL
 </ul>
 
 ## Home Interface
-![Home Interface](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/1.png?raw=true)
+<img src="https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/1.png" width=300 height=350 />
 
 ## Crop Table
 ![Crop Details(CRUD)](https://github.com/Hunking9797/wholesale-agriculture-GUI/blob/master/Sample%20Images/2.png?raw=true)
