@@ -5,7 +5,7 @@ Developed using Tkinter and SQL
 <ul>
   <li> Create new schema and import wholesale.sql </li>
   <li> Configure username and password in <b>main.py</b> (use replaceAll in your IDE for editing all occurence of username and password with your credentials on SQL)</li>
-  <li> That's it you ready to go. </li>
+  <li> That's it you're ready to go. </li>
 </ul>
 
 ## Home Interface
