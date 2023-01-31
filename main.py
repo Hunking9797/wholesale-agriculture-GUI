@@ -1,15 +1,15 @@
 from cgitb import text
-import email
 from tkinter import *
 from tkinter import messagebox
 import mysql.connector as mysql
 
 #CROP
 class Crop:
+    def __init__(self, window):
+        self.window = window
 
     def cropWindow(self):
-
-        cropWindow = Toplevel(window)
+        cropWindow = Toplevel(self.window)
         cropWindow.title("Crop")
         cropWindow.geometry("500x500")
 
@@ -56,7 +56,7 @@ class Crop:
         if(name == "" or type == "" or desc == "" or exp_date == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("insert into crop values('"+ name +"','"+ type +"','"+ desc +"','"+ exp_date +"')")
             cursor.execute("commit")
@@ -75,7 +75,7 @@ class Crop:
         if crop_name_entry.get() == "":
             messagebox.showinfo(title="Info", message='Crop name is compulsory to delete')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("delete from crop where crop_name = '" + crop_name_entry.get() +"'")
             cursor.execute("commit")
@@ -99,7 +99,7 @@ class Crop:
         if(name == "" or type == "" or desc == "" or exp_date == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("update crop set crop_type ='"+ type +"', crop_desc = '" + desc + "', exp_date = '" + exp_date +"' where crop_name = '"+ name +"' ")
             cursor.execute("commit")
@@ -115,7 +115,7 @@ class Crop:
             con.close()
 
     def show(self,table_content):
-        con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+        con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
         cursor = con.cursor()
         cursor.execute("select * from crop")
         rows = cursor.fetchall()
@@ -128,8 +128,11 @@ class Crop:
 
 #SUPPLIER
 class Supplier:
+    def __init__(self, window):
+        self.window = window
+
     def supplierWindow(self):
-        supplierWindow = Toplevel(window)
+        supplierWindow = Toplevel(self.window)
         supplierWindow.title("Supplier")
         supplierWindow.geometry("500x500")
 
@@ -180,7 +183,7 @@ class Supplier:
         if(name == "" or sid == "" or commission == "" or phone == "" or email == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("insert into supplier values('"+ name +"','"+ sid +"','"+ commission +"','"+ phone +"','"+ email +"')")
             cursor.execute("commit")
@@ -200,7 +203,7 @@ class Supplier:
         if s_id_entry.get() == "":
             messagebox.showinfo(title="Info", message='Supplier ID is compulsory for deleting')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("delete from supplier where s_id = '" + s_id_entry.get() +"'")
             cursor.execute("commit")
@@ -226,7 +229,7 @@ class Supplier:
         if(name == "" or sid == "" or commission == "" or phone == "" or email == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("update supplier set sup_name ='"+ name +"', commission = '" + commission + "', phone = '" + phone +"', email = '" + email +"' where s_id = '"+ sid +"' ")
             cursor.execute("commit")
@@ -243,7 +246,7 @@ class Supplier:
             con.close()
 
     def show(self,table_content):
-        con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+        con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
         cursor = con.cursor()
         cursor.execute("select * from supplier")
         rows = cursor.fetchall()
@@ -256,8 +259,11 @@ class Supplier:
 
 #FARMER
 class Farmer:
+    def __init__(self, window):
+        self.window = window
+
     def farmerWindow(self):
-        farmerWindow = Toplevel(window)
+        farmerWindow = Toplevel(self.window)
         farmerWindow.title("Supplier")
         farmerWindow.geometry("500x500")
 
@@ -303,7 +309,7 @@ class Farmer:
         if(name == "" or f_id == "" or age == "" or phone == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("insert into farmer values('"+ name +"','"+ f_id +"','"+ age +"','"+ phone +"')")
             cursor.execute("commit")
@@ -322,7 +328,7 @@ class Farmer:
         if f_id_entry.get() == "":
             messagebox.showinfo(title="Info", message='Farmer ID is compulsory for deleting')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("delete from farmer where f_id = '" + f_id_entry.get() +"'")
             cursor.execute("commit")
@@ -346,7 +352,7 @@ class Farmer:
         if(name == "" or fid == "" or age == "" or phone == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("update farmer set farmer_name ='"+ name +"', age = '" + age + "', phone = '" + phone +"' where f_id = '"+ fid +"' ")
             cursor.execute("commit")
@@ -362,7 +368,7 @@ class Farmer:
             con.close()
 
     def show(self,table_content):
-        con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+        con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
         cursor = con.cursor()
         cursor.execute("select * from farmer")
         rows = cursor.fetchall()
@@ -376,8 +382,11 @@ class Farmer:
 
 #WAREHOUSE
 class Warehouse:
+    def __init__(self, window):
+        self.window = window
+
     def warehouseWindow(self):
-        warehouseWindow = Toplevel(window)
+        warehouseWindow = Toplevel(self.window)
         warehouseWindow.title("Supplier")
         warehouseWindow.geometry("500x500")
 
@@ -423,7 +432,7 @@ class Warehouse:
         if(w_id == "" or address == "" or max_capacity == "" or present_storage == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("insert into warehouse values('"+ w_id +"','"+ address +"','"+ max_capacity +"','"+ present_storage +"')")
             cursor.execute("commit")
@@ -442,7 +451,7 @@ class Warehouse:
         if w_id_entry.get() == "":
             messagebox.showinfo(title="Info", message='Farmer ID is compulsory for deleting')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("delete from warehouse where w_id = '" + w_id_entry.get() +"'")
             cursor.execute("commit")
@@ -466,7 +475,7 @@ class Warehouse:
         if(w_id == "" or address == "" or max_capacity == "" or present_storage == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("update warehouse set address ='"+ address +"', max_capacity = '" + max_capacity + "', present_storage = '" + present_storage +"' where w_id = '"+ w_id +"' ")
             cursor.execute("commit")
@@ -482,7 +491,7 @@ class Warehouse:
             con.close()
 
     def show(self,table_content):
-        con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+        con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
         cursor = con.cursor()
         cursor.execute("select * from warehouse")
         rows = cursor.fetchall()
@@ -495,8 +504,11 @@ class Warehouse:
 
 #PAYMENT
 class Payment:
+    def __init__(self, window):
+        self.window = window
+
     def paymentWindow(self):
-        paymentWindow = Toplevel(window)
+        paymentWindow = Toplevel(self.window)
         paymentWindow.title("Supplier")
         paymentWindow.geometry("500x500")
 
@@ -552,7 +564,7 @@ class Payment:
         if(p_id == "" or amount == "" or discount == "" or tax == "" or mode_of_payment == "" or cust_id == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("insert into payment values('"+ p_id +"','"+ amount +"','"+ discount +"','"+ tax +"','"+ mode_of_payment +"','"+ cust_id +"')")
             cursor.execute("commit")
@@ -573,7 +585,7 @@ class Payment:
         if p_id_entry.get() == "":
             messagebox.showinfo(title="Info", message='Payment ID is compulsory for deleting')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("delete from payment where p_id = '" + p_id_entry.get() +"'")
             cursor.execute("commit")
@@ -601,7 +613,7 @@ class Payment:
         if(p_id == "" or amount == "" or discount == "" or tax == "" or mode_of_payment == "" or cust_id == ""):
             messagebox.showinfo(title='Error',message='Attributes cannot be NULL', icon='error')
         else:
-            con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+            con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
             cursor = con.cursor()
             cursor.execute("update payment set amount ='"+ amount +"', discount = '" + discount + "', tax = '" + tax +"', mode_of_payment = '" + mode_of_payment +"', cust_id = '" + cust_id +"' where p_id = '"+ p_id +"' ")
             cursor.execute("commit")
@@ -619,7 +631,7 @@ class Payment:
             con.close()
 
     def show(self,table_content):
-        con = mysql.connect(host='localhost', user='root', password='12345', database='agriculture')
+        con = mysql.connect(host='localhost', user='root', password='arunnaveen', database='agriculture')
         cursor = con.cursor()
         cursor.execute("select * from payment")
         rows = cursor.fetchall()
@@ -630,6 +642,11 @@ class Payment:
 
         con.close()
 
+def validateLogin(username, password):
+	# print("username entered :", username.get())
+	# print("password entered :", password.get())
+    print("")
+    #main.main()
 
 if __name__ == "__main__":
     #Main
@@ -637,33 +654,37 @@ if __name__ == "__main__":
     window.config(bg='#97F0A5')
     window.geometry("600x500") #dimension of main window
     window.title("Wholesale Market Dealer (Agriculture)") #title of window
-    icon = PhotoImage(file="Crop Icon.png") #tiny icon of window
-    window.iconphoto(True,icon)
+    #icon = PhotoImage(file="Crop Icon.png") #tiny icon of window
+    #window.iconphoto(True,icon)
+
 
     tables = Label(window,text="Wholesale Market Dealer", font=('System',32), fg="green", bg='#97F0A5')
     tables.pack()
 
-    label = Label(window,text='Developed by Arunchandra\nahalemani7@gmail.com',bg='#97F0A5', font=('Arial',10))
-    label.place(x=435,y=460)
+    #label = Label(window,text='Developed by Arunchandra\nahalemani7@gmail.com',bg='#97F0A5', font=('Arial',10))
+    #label.place(x=435,y=460)
 
-    c = Crop()
-    c = Button(window, text="Crop Table", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=c.cropWindow)
+    c = Crop(window)
+    c = Button(window, text="Crop Data", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=c.cropWindow)
     c.place(x=30,y=100)
 
-    s = Supplier()
-    s = Button(window, text="Supplier Table", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=s.supplierWindow)
+    s = Supplier(window)
+    s = Button(window, text="Supplier Data", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=s.supplierWindow)
     s.place(x=200, y=100)
 
-    f = Farmer()
-    f = Button(window, text="Farmer Table", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=f.farmerWindow)
+    f = Farmer(window)
+    f = Button(window, text="Farmer Data", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=f.farmerWindow)
     f.place(x=400, y=100)
 
-    w = Warehouse()
-    w = Button(window, text="Warehouse Table", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=w.warehouseWindow)
+    w = Warehouse(window)
+    w = Button(window, text="Warehouse Data", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=w.warehouseWindow)
     w.place(x=100, y=250)
 
-    p = Payment()
-    p = Button(window, text="Payment Table", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=p.paymentWindow)
+    p = Payment(window)
+    p = Button(window, text="Payment Data", font=('System',16), bg='#97F0A5', activebackground='#5F9668', command=p.paymentWindow)
     p.place(x=310, y=250)
+
+    loginButton = Button(window, fg="#FFFFFF", bg="#FF0000", font=('Arial',15), height=1, width=23, text="Logout",
+                         command=lambda: [window.destroy()]).place(x=150, y=400)
 
     window.mainloop()
